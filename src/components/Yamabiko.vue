@@ -16,6 +16,7 @@ export default {
   }),
   methods: {
     doAddProduct() {
+      //aa
       const params = new URLSearchParams();
       params.append("Name", this.message);
       axios.post("/addProduct", params).then((response) => {
