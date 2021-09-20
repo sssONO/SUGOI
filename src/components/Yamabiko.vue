@@ -15,12 +15,6 @@ export default {
     message: "",
   }),
   methods: {
-    // async Send() {
-    //   const yamabiko = await this.CallYamabikoAPI().then((res) => res.json());
-    //   this.yamabiko = yamabiko.message;
-    //   window.alert(this.yamabiko);
-    // },
-
     doAddProduct() {
       const params = new URLSearchParams();
       params.append("Name", this.message);
