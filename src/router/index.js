@@ -16,7 +16,7 @@ const routes = [
   },
   {
     path: '/yamabiko',
-    name: 'Yamabiko',
+    name: 'yamabiko',
     component: Yamabiko
   }
 ]

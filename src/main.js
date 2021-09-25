@@ -1,8 +1,9 @@
 //import Vue from 'vue'
-import { createApp } from 'vue'
 //import Home from './views/Home.vue'
+import { createApp } from 'vue'
 import App from './App.vue'
 import './index.css'
+
 // ルーティングのために追加
 import router from './router'
 
