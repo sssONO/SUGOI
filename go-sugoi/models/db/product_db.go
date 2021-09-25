@@ -26,19 +26,14 @@ func open() *gorm.DB {
 	if err != nil {
 		panic(err.Error())
 	}
-
 	// DBエンジンを「InnoDB」に設定
 	db.Set("gorm:table_options", "ENGINE=InnoDB")
-
 	// 詳細なログを表示
 	db.LogMode(true)
-
 	// 登録するテーブル名を単数形にする（デフォルトは複数形）
 	db.SingularTable(true)
-
 	// マイグレーション（テーブルが無い時は自動生成）
 	db.AutoMigrate(&entity.Product{})
-
 	fmt.Println("db connected: ", &db)
 	return db
 }

@@ -15,9 +15,3 @@ func AddProduct(c *gin.Context) {
 	}
 	db.InsertProduct(&product)
 }
-
-// func DeleteProduct(c *gin.Context) {
-// 	productIDStr := c.PostForm("productID")
-// 	productID, _ := strconv.Atoi(productIDStr)
-// 	db.DeleteProduct(productID)
-// }

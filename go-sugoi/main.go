@@ -3,12 +3,10 @@ package main
 import (
 	//無視してよい。
 	"fmt"
-	"time"
-
 	"log"
 	controller "main/controller"
+	"time"
 
-	//"github.com/labstack/echo/middleware"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	_ "github.com/go-sql-driver/mysql"
@@ -30,7 +28,6 @@ func sqlConnect() (database *gorm.DB, err error) {
 	db.LogMode(true)
 	fmt.Println("db connected: ", &db)
 	return db, err
-
 }
 
 func serve() {
@@ -41,7 +38,7 @@ func serve() {
 		AllowOrigins: []string{
 			"http://localhost:8080",
 			"http://localhost:8080/yamabiko",
-			"http://localhost:8000/yamabiko",
+			"http://localhost:8080/addProduct",
 		},
 		// アクセス許可するHTTPメソッド
 		AllowMethods: []string{
@@ -62,6 +59,7 @@ func serve() {
 	// ルーターの設定
 	// 商品情報をDBへ登録する
 	engine.POST("/addProduct", controller.AddProduct)
+
 	if err := engine.Run(":8080"); err != nil {
 		log.Fatal("Server Run Failed.: ", err)
 	}
